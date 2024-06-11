@@ -66,7 +66,7 @@ def hrt(seconds, precision = 0):
 
 timer = Timer()
 
-# designed by Mendax
+# Powered By Ankush
 async def progress_bar(current, total, reply, start):
     if timer.can_send():
         now = time.time()
@@ -86,18 +86,12 @@ async def progress_bar(current, total, reply, start):
             sp = str(hrb(speed)) + "/s"
             tot = hrb(total)
             cur = hrb(current)
-            
-            #don't even change anything till here
-            # Calculate progress bar dots
-            #ab mila dil ko sukun #by AirPheonix
-            #change from here if you want 
-            bar_length = 20
+            bar_length = 11
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
-            progress_bar = "▓" * completed_length + "▒" * remaining_length
+            progress_bar = "▰" * completed_length + "▱" * remaining_length
             
             try:
-                await reply.edit(f'`╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣ \n┣⪼ ⚡{progress_bar} : {perc}\n┣⪼ 🚀 sᴘᴇᴇᴅ : {sp} \n┣⪼ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n┣⪼ 💾 sɪᴢᴇ- ᴇᴛᴀ :  {tot} : {eta} \n╰━━⌈⚡﹝🇦 🇯 _🇵 🇾 🇹 🇭 🇴 🇳  💀﹞⚡⌋━━➣`\n') 
-         #       await reply.edit(f'`╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣ \n┣⪼ ⚡{progress_bar} : {perc}\n┣⪼ 🚀 sᴘᴇᴇᴅ : {sp} \n┣⪼ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n┣⪼ 💾 sɪᴢᴇ- ᴇᴛᴀ :  {tot} : {eta} \n╰━⌈  𝑩𝒐𝒕 𝑴𝒂𝒅𝒆 𝒃𝒚 𝑮-𝑼𝑻𝑺™❤️⌋─━━➣`\n') 
+                await reply.edit(f'\n `╭──⌯════🆄︎ᴘʟᴏᴀᴅɪɴɢ⬆️⬆️═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n├🤖𝔹ʏ » Md Matin Ashraf\n╰─═══ ✪﹝🇦 🇯 _🇵 🇾 🇹 🇭 🇴 🇳  💀﹞✪ ═══─╯\n`') 
             except FloodWait as e:
                 time.sleep(e.x)
